@@ -1,0 +1,34 @@
+.MainMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 234, 221);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.MainMenu h1 {
+    font-size: 5rem;
+    width: max-content;
+    margin: 0;
+}
+  
+.cakes {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.cake {
+    width: 10rem;
+}
+
+.MainMenu button {
+    font-size: 1.5rem;
+}
+
+.MainMenu .play:hover {
+    background-color: rgb(212, 175, 175);
+}

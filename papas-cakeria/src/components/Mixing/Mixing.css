@@ -1,0 +1,22 @@
+.Mixing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.options {
+    display: flex;
+    padding: 1rem;
+    border: 2px solid gray;
+    background-color: gray;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.icon {
+    width: 5rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
