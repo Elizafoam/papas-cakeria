@@ -1,26 +1,57 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import Modal from '../Modal/Modal';
 import './Mixing.css';
-import { useState } from 'react';
 
 const Mixing = () => {
-    const [bowl, setBowl] = useState("");
-    const [batter, setBatter] = useState("");
-    
+  const [activeModal, setActiveModal] = useState(false);
+  const [bowl, setBowl] = useState(localStorage.getItem('bowl'));
+  const [item, setItem] = useState("");
+  const [ingredients, setIngredients] = useState([]);
+  const [hasIngredients, setHasIngredients] = useState(false);
+
+  const handleClick= (e) => {
+    setActiveModal(true)
+    setItem(e);
+    let oldIngredients = [...ingredients];
+    oldIngredients.push(e)
+    setIngredients(oldIngredients)
+    console.log(ingredients)
+
+    setTimeout(() => {
+      setActiveModal(false)
+    }, 1000)
+  }
+
+  useEffect(() => {
+    if (ingredients.includes("flour") && ingredients.includes("baking_powder") && ingredients.includes("sugar") && ingredients.includes("butter") && ingredients.includes("eggs") && ingredients.includes("milk") ) {
+      setHasIngredients(true);
+      console.log("yes")
+    }
+    console.log("no")
+  }, [ingredients])
+
   return (
     <div className='Mixing'>
-      <h1>Batter</h1>
+      <h1>Mixing Stage</h1>
       <div className='options'>
-        <img src="circlebowl.png" alt="whisk icon" className='icon' id='circle' onClick={(e) => setBowl(e.target.id)} style={{backgroundColor: bowl.includes("circle") ? "pink" : "white"}}/>
-        <img src="squarebowl.png" alt="mixing bowl" className='icon' id='square' onClick={(e) => setBowl(e.target.id)} style={{backgroundColor: bowl.includes("square") ? "pink" : "white"}}/>
+        <img src="baking-soda.png" alt="baking powder" id='baking_powder' className='icon' onClick={(e) => handleClick(e.target.id)}/>
+        <img src="flour.png" alt="flour" id='flour' className='icon' onClick={(e) => handleClick(e.target.id)}/>
+        <img src="butter.png" alt="butter" id='butter' className='icon' onClick={(e) => handleClick(e.target.id)}/>
+        <img src="eggs.png" alt="eggs" id='eggs' className='icon' onClick={(e) => handleClick(e.target.id)}/>
+        <img src="milk.png" alt="milk" id='milk' className='icon' onClick={(e) => handleClick(e.target.id)}/>
+        <img src="sugar.png" alt="sugar" id='sugar' className='icon' onClick={(e) => handleClick(e.target.id)}/>
       </div>
-      <div className='options'>
-        <img src="chocolate.png" alt="whisk icon" className='icon' id='chocolate' onClick={(e) => setBatter(e.target.id)} style={{backgroundColor: batter.includes("chocolate") ? "pink" : "white"}}/>
-        <img src="vanilla.png" alt="mixing bowl" className='icon' id='vanilla' onClick={(e) => setBatter(e.target.id)} style={{backgroundColor: batter.includes("vanilla") ? "pink" : "white"}}/>
-        <img src="strawberry.png" alt="mixing bowl" className='icon' id='strawberry' onClick={(e) => setBatter(e.target.id)} style={{backgroundColor: batter.includes("strawberry") ? "pink" : "white"}}/>
-      </div> 
-      { batter && bowl && 
+      <div className='bowl' style={{ borderRadius: bowl.includes("circle") ? "100%" : "5%"}}></div>
+
+      { activeModal && 
+        <Modal show={activeModal} onClose={() => setActiveModal(false)}>
+          <h3>Added {item}!</h3>
+        </Modal>
+      }
+      { hasIngredients &&
         <Link to="/baking">
-            <button>Baking Cake</button>
+          <button>Move to Baking Stage</button>
         </Link>
       }
     </div>

@@ -12,6 +12,8 @@
     background-color: gray;
     border-radius: 1rem;
     gap: 1rem;
+    width: 17rem;
+    overflow-x: scroll;
 }
 
 .icon {
@@ -19,4 +21,14 @@
     background-color: white;
     border-radius: 1rem;
     padding: 1rem;
+    cursor: pointer;
+}
+
+.bowl {
+    margin-top: 1rem;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 100%;
+    border: 1rem solid rgb(80, 76, 70);
+    background-color: rgb(183, 183, 183);
 }

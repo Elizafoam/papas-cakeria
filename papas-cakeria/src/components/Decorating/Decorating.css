@@ -1,0 +1,36 @@
+.Decorating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(242, 243, 236);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.added-icon {
+    width: 3rem;
+}
+
+.cake {
+    background-color: rgb(255, 236, 217);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: 12rem;
+    height: 10rem;
+}
+
+.plate {
+    width: 14rem;
+    height: 1rem;
+    background-color: rgb(80, 118, 137);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}

@@ -1,0 +1,38 @@
+.Recipe {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+    background-color: #fffbf6;
+    border: 2px solid rgb(255, 249, 242);
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.Recipe h1 {
+    margin: 0;
+}
+
+.Recipe .ingredient {
+    width: 2rem;
+}
+
+.Recipe .ingredients {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+hr {
+    height: 0.07rem;
+    background-color: rgb(61, 61, 61);
+    width: 15rem;
+    margin: 0;
+}
+
+.Recipe .stuff {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
