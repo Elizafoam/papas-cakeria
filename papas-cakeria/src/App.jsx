@@ -5,7 +5,8 @@ import Selection from './components/Selection/Selection';
 import Mixing from './components/Mixing/Mixing';
 import Baking from './components/Baking/Baking';
 import Recipe from "./components/Recipe/Recipe";
-import Decorating from "./components/Decorating/Decorating"
+import Decorating from "./components/Decorating/Decorating";
+import Complete from "./components/Complete/Complete"
 import './App.css';
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
           <Route path='/mixing' element={<Mixing />}></Route>
           <Route path='/baking' element={<Baking />}></Route>
           <Route path='/decorating' element={<Decorating />}></Route>
+          <Route path='/done' element={<Complete />}></Route>
         </Routes>
         <Recipe gRecipe={recipe}/>
       </BrowserRouter>

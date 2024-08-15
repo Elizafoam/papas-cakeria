@@ -76,7 +76,7 @@ const Decorating = () => {
       }
       
       { decorations.includes(recipe.pickedTopping) && decorations.includes(recipe.pickedDecor) && 
-        <Link to="/selection">
+        <Link to="/done">
             <button>Finish Order</button>
         </Link>
       }
